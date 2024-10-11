@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { register } from "../redux/slices/registerSlice";
+import { register } from "../../features/redux/slices/registerSlice";
 import { useState, useEffect } from "react";
 
 export const useRegister = () => {
@@ -13,13 +13,13 @@ export const useRegister = () => {
         setSuccess(false);
         setError(null);
 
-        if (fullName || studentID || courseOfStudy || level) {
+        if (fullName && studentID && courseOfStudy && level) {
             dispatch(register({ fullName, studentID, courseOfStudy, level }));
             setSuccess(true);
         } else {
             setError("Please fill in all fields");
         }
-    }
+    };
 
     useEffect(() => {
         if (success || error) {
@@ -31,7 +31,7 @@ export const useRegister = () => {
             return () => clearTimeout(timer);
         }
 
-    }, [error, success])
+    }, [error, success]);
 
     return { handleRegistration, error, success };
-}
+};
