@@ -64,7 +64,7 @@ export const RegisterForm = () => {
                 margin: 'auto',
                 mt: 18,
                 padding: { xs: 2, sm: 4 },
-                backgroundColor: '#fffdd0',
+                backgroundColor: '#faf9f6',
                 borderRadius: 3,
                 border: '1px solid #848486'
             }}
